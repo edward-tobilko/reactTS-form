@@ -1,0 +1,7 @@
+[0306/183530.509:ERROR:process_reader_win.cc(90)] NtQuerySystemInformation: {Not Enough Quota} Not enough virtual memory or paging file quota is available to complete the specified operation. (0xc0000017)
+[0306/183530.511:ERROR:exception_snapshot_win.cc(98)] thread ID 1948 not found in process
+[0306/183531.549:ERROR:process_reader_win.cc(90)] NtQuerySystemInformation: {Not Enough Quota} Not enough virtual memory or paging file quota is available to complete the specified operation. (0xc0000017)
+[0306/183531.549:ERROR:exception_snapshot_win.cc(98)] thread ID 7992 not found in process
+[0404/100306.395:ERROR:process_info.cc(375)] NtQuerySystemInformation SystemExtendedHandleInformation: {Not Enough Quota} Not enough virtual memory or paging file quota is available to complete the specified operation. (0xc0000017)
+[0404/103231.771:ERROR:process_info.cc(359)] UncheckedAllocate
+[0404/103231.987:ERROR:process_info.cc(375)] NtQuerySystemInformation SystemExtendedHandleInformation: {Not Enough Quota} Not enough virtual memory or paging file quota is available to complete the specified operation. (0xc0000017)
