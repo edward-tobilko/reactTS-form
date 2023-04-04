@@ -1,4 +1,3 @@
-import s from "./app.module.css";
 import { Routes, Route } from "react-router-dom";
 
 import ProgressBar from "./components/progress-bar/ProgressBar";
