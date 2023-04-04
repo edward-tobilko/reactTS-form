@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/reactTS-form/static/css/main.e2fd544d.css",
+    "main.js": "/reactTS-form/static/js/main.808ab917.js",
+    "index.html": "/reactTS-form/index.html",
+    "main.e2fd544d.css.map": "/reactTS-form/static/css/main.e2fd544d.css.map",
+    "main.808ab917.js.map": "/reactTS-form/static/js/main.808ab917.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e2fd544d.css",
+    "static/js/main.808ab917.js"
+  ]
+}
