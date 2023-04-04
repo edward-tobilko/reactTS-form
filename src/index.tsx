@@ -11,10 +11,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <>
-    <GlobalStyle />
-
     <ContextProvider>
       <Router>
+        <GlobalStyle />
         <App />
       </Router>
     </ContextProvider>
