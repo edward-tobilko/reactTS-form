@@ -18,8 +18,6 @@ export const useInput = (initialValue: string, validations: object): object => {
 
   const blurHandler = (event: React.FocusEvent<HTMLInputElement>) => {
     setStateField(true);
-
-    console.log(event);
   };
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {

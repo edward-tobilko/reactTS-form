@@ -16,6 +16,7 @@ type StepNavigationType = {
 
 export const StepNavigation = ({ labels, currentStep }: StepNavigationType) => {
   const [newStep, setNewStep] = useState<object[]>([]);
+
   const stepRef = useRef<BooleanType[] | null>(null);
 
   function updateNewStep(stepNumber: number, steps: Array<BooleanType>) {
