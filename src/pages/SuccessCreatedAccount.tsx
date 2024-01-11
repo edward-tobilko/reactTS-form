@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import Confetti from "react-confetti";
 import useWindowSize from "react-use/lib/useWindowSize";
+
 import { SuccessCreatedAccountStyle, WrapperStyle } from "./pagesStyles";
 
 import { Title } from "../components/text/Title";

@@ -1,11 +1,12 @@
 import { useNavigate } from "react-router-dom";
+
 import { ReviewInfoListStyle, WrapperStyle } from "./pagesStyles";
+
 import {
   BtnsBlockStyle,
   NextButtonStyle,
   PrevButtonStyle,
 } from "../components/btns/btnsStyles";
-
 import { Subtitle } from "../components/text/Subtitle";
 import { Title } from "../components/text/Title";
 import { labels } from "../components/progress-bar/ProgressBar";

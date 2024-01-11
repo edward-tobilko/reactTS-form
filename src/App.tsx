@@ -1,5 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 
+import {
+  AppFormHeaderBtnStyle,
+  AppFormHeaderStyle,
+  AppFormStyle,
+  AppStyle,
+} from "./appStyles";
+
 import ProgressBar from "./components/progress-bar/ProgressBar";
 import CallMe from "./pages/CallMe";
 import CheckVerification from "./pages/CheckVerification";
@@ -9,12 +16,6 @@ import ReviewInfo from "./pages/ReviewInfo";
 import VerifyNumber from "./pages/VerifyNumber";
 import SuccessCreatedAccount from "./pages/SuccessCreatedAccount";
 import SuccessPhone from "./pages/SuccessPhone";
-import {
-  AppFormHeaderBtnStyle,
-  AppFormHeaderStyle,
-  AppFormStyle,
-  AppStyle,
-} from "./appStyles";
 
 const App = () => {
   return (

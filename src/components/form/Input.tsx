@@ -1,4 +1,5 @@
 import React, { forwardRef, FC } from "react";
+
 import { InputStyle } from "./formStyles";
 
 export type PropsType = {

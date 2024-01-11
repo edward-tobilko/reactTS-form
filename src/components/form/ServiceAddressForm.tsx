@@ -1,3 +1,5 @@
+import { FC } from "react";
+
 import {
   ListInputsStyle,
   ListInputsItemStyle,
@@ -6,7 +8,6 @@ import {
   StreetNumberStyle,
   StreetInputStyle,
 } from "./formStyles";
-import { FC } from "react";
 
 import { Input } from "./Input";
 import { Select } from "./Select";

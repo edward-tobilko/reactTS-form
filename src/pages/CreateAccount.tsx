@@ -1,10 +1,6 @@
-import {
-  BtnsBlockStyle,
-  NextButtonStyle,
-  PrevButtonStyle,
-} from "../components/btns/btnsStyles";
 import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
+
 import {
   CreateAccountBusinessPhoneNumberStyle,
   CreateAccountBusinessPhoneStyle,
@@ -12,6 +8,11 @@ import {
   WrapperStyle,
 } from "./pagesStyles";
 
+import {
+  BtnsBlockStyle,
+  NextButtonStyle,
+  PrevButtonStyle,
+} from "../components/btns/btnsStyles";
 import { Subtitle } from "../components/text/Subtitle";
 import { Title } from "../components/text/Title";
 import { BusinessForm } from "../components/form/BusinessForm";

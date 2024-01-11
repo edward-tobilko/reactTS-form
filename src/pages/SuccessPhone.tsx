@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
+
 import { SuccessPhoneStyle, WrapperStyle } from "./pagesStyles";
+
 import {
   BtnsBlockStyle,
   NextButtonStyle,

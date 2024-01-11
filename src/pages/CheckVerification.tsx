@@ -1,6 +1,6 @@
-import s from "./../app.module.css";
 import React, { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
 import {
   CheckVerificationPhoneStyle,
   VerificationCheckboxStyle,
@@ -8,12 +8,12 @@ import {
   VerivicationButtonStyle,
   VerivicationStyle,
 } from "./pagesStyles";
+
 import {
   BtnsBlockStyle,
   NextButtonStyle,
   PrevButtonStyle,
 } from "../components/btns/btnsStyles";
-
 import { Title } from "../components/text/Title";
 import { InputVerification } from "../components/form/InputVerification";
 import { labels } from "../components/progress-bar/ProgressBar";

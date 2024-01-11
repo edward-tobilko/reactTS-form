@@ -1,11 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
 import { ConfirmAccountStyle, WrapperStyle } from "./pagesStyles";
+
 import {
   BtnsBlockStyle,
   NextButtonStyle,
   PrevButtonStyle,
 } from "../components/btns/btnsStyles";
-import { useNavigate } from "react-router-dom";
-
 import { Input } from "../components/form/Input";
 import { Subtitle } from "../components/text/Subtitle";
 import { Title } from "../components/text/Title";

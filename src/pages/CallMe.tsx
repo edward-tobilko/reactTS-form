@@ -1,11 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
+import { WrapperStyle } from "./pagesStyles";
+
 import {
   BtnsBlockStyle,
   NextButtonStyle,
   PrevButtonStyle,
 } from "../components/btns/btnsStyles";
-import { WrapperStyle } from "./pagesStyles";
-import { useNavigate } from "react-router-dom";
-
 import { Title } from "../components/text/Title";
 import { labels } from "../components/progress-bar/ProgressBar";
 import { useStepNavigation } from "../context/Context";
