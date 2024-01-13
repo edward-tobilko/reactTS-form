@@ -25,6 +25,8 @@ export const AddSMSForm: FC<IAddSMSFormType<any>> = ({ inputRef }) => {
   const props = useStepNavigation();
   const navigate = useNavigate();
 
+  console.log(inputRef.current);
+
   function nextHandleClick(direction: string) {
     let newStep = props?.currentStep;
 

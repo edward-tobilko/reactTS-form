@@ -35,23 +35,6 @@ const CallMe = () => {
     navigate("/");
   }
 
-  // useEffect(() => {
-  //   const storedData = localStorage.getItem("callMeData");
-  //   if (storedData) {
-  //     const parsedData = JSON.parse(storedData);
-  //     // Update the state or perform any necessary actions with parsedData
-  //     console.log(parsedData);
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   const dataToSave = {
-  //     phoneNumber: props?.phoneNumber.fieldValue,
-  //   };
-
-  //   localStorage.setItem("callMeData", JSON.stringify(dataToSave));
-  // }, [props?.phoneNumber.fieldValue]);
-
   return (
     <>
       <WrapperStyle padding={"30px"}>
