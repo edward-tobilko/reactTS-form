@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { collection, addDoc } from "firebase/firestore/lite";
 
 import { SuccessPhoneStyle, WrapperStyle } from "./pagesStyles";
 
@@ -12,6 +13,7 @@ import { VerivicationButtonStyle } from "./pagesStyles";
 import { Title } from "../components/text/Title";
 import { useStepNavigation } from "../context/Context";
 import { labels } from "../components/progress-bar/ProgressBar";
+import db from "../firebaseConfig";
 
 const SuccessPhone = () => {
   const props = useStepNavigation();
@@ -23,6 +25,16 @@ const SuccessPhone = () => {
 
     direction === "next" ? newStep++ : newStep--;
     newStep > 0 && newStep <= labels.length && props?.setCurrentStep(newStep);
+
+    const saveDataToFirestore = async () => {
+      await addDoc(collection(db, "myCollection"), {
+        phoneNumber: props?.phoneNumber.fieldValue || "",
+      });
+
+      alert("Document written to Database");
+    };
+
+    saveDataToFirestore();
 
     navigate("/create-account");
   }

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { collection, addDoc } from "firebase/firestore/lite";
 import { useNavigate } from "react-router-dom";
 
 import { WrapperStyle } from "./pagesStyles";
@@ -11,6 +11,7 @@ import {
 import { Title } from "../components/text/Title";
 import { labels } from "../components/progress-bar/ProgressBar";
 import { useStepNavigation } from "../context/Context";
+import db from "../firebaseConfig";
 
 const CallMe = () => {
   const props = useStepNavigation();
@@ -22,6 +23,16 @@ const CallMe = () => {
 
     direction === "next" ? newStep++ : newStep--;
     newStep > 0 && newStep <= labels.length && props?.setCurrentStep(newStep);
+
+    const saveDataToFirestore = async () => {
+      await addDoc(collection(db, "myCollection"), {
+        phoneNumberField: props?.phoneNumber.fieldValue || "",
+      });
+
+      alert("Document written to Database");
+    };
+
+    saveDataToFirestore();
 
     navigate("/check-verification");
   }

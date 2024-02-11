@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { collection, addDoc } from "firebase/firestore/lite";
 
 import { ConfirmAccountStyle, WrapperStyle } from "./pagesStyles";
 
@@ -12,6 +13,7 @@ import { Subtitle } from "../components/text/Subtitle";
 import { Title } from "../components/text/Title";
 import { labels } from "../components/progress-bar/ProgressBar";
 import { useStepNavigation } from "../context/Context";
+import db from "../firebaseConfig";
 
 const ConfirmAccountName = () => {
   const props = useStepNavigation();
@@ -23,6 +25,16 @@ const ConfirmAccountName = () => {
 
     direction === "next" ? newStep++ : newStep--;
     newStep > 0 && newStep <= labels.length && props?.setCurrentStep(newStep);
+
+    const saveDataToFirestore = async () => {
+      await addDoc(collection(db, "myCollection"), {
+        bussinesName: props?.bussinesName.fieldValue || "",
+      });
+
+      alert("Document written to Database");
+    };
+
+    saveDataToFirestore();
 
     navigate("/review-info");
   }

@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { useNavigate } from "react-router-dom";
+import { collection, addDoc } from "firebase/firestore/lite";
 
 import {
   AddSmsFormCheckboxStyle,
@@ -16,6 +17,7 @@ import { ValidError } from "./ValidError";
 import { useStepNavigation } from "../../context/Context";
 import { labels } from "../progress-bar/ProgressBar";
 import { normalizePhoneNumber } from "../../utils/normalizePhoneNumber";
+import db from "../../firebaseConfig";
 
 type IAddSMSFormType<T> = {
   readonly inputRef: T | null;
@@ -25,23 +27,30 @@ export const AddSMSForm: FC<IAddSMSFormType<any>> = ({ inputRef }) => {
   const props = useStepNavigation();
   const navigate = useNavigate();
 
-  console.log(inputRef.current);
-
-  function nextHandleClick(direction: string) {
+  async function nextHandleClick(direction: string) {
     let newStep = props?.currentStep;
 
     direction === "next" ? newStep++ : newStep--;
     newStep > 0 && newStep <= labels.length && props?.setCurrentStep(newStep);
 
+    const saveDataToFirestore = async () => {
+      await addDoc(collection(db, "myCollection"), {
+        phoneNumberField: props?.phoneNumber.fieldValue || "",
+        firstNameField: props?.firstName.fieldValue || "",
+        lastNameField: props?.lastName.fieldValue || "",
+        emailField: props?.email.fieldValue || "",
+      });
+
+      alert("Document written to Database");
+    };
+
+    saveDataToFirestore();
+
     navigate("/call-me");
   }
 
-  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
-    event.preventDefault();
-  };
-
   return (
-    <AddSmsFormStyle noValidate onSubmit={handleSubmit}>
+    <AddSmsFormStyle noValidate>
       <FormLabelStyle>ENTER YOUR BUSINESS PHONE NUMBER:</FormLabelStyle>
 
       {props?.phoneNumber.stateField && props?.phoneNumber.isEmpty && (

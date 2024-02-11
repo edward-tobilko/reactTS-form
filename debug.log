@@ -5,3 +5,5 @@
 [0404/100306.395:ERROR:process_info.cc(375)] NtQuerySystemInformation SystemExtendedHandleInformation: {Not Enough Quota} Not enough virtual memory or paging file quota is available to complete the specified operation. (0xc0000017)
 [0404/103231.771:ERROR:process_info.cc(359)] UncheckedAllocate
 [0404/103231.987:ERROR:process_info.cc(375)] NtQuerySystemInformation SystemExtendedHandleInformation: {Not Enough Quota} Not enough virtual memory or paging file quota is available to complete the specified operation. (0xc0000017)
+[0114/193233.358:ERROR:process_info.cc(359)] UncheckedAllocate
+[0114/193234.994:ERROR:http_transport_win.cc(382)] HTTP status 403

@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { collection, addDoc } from "firebase/firestore/lite";
 
 import {
   CheckVerificationPhoneStyle,
@@ -19,6 +20,7 @@ import { InputVerification } from "../components/form/InputVerification";
 import { labels } from "../components/progress-bar/ProgressBar";
 import { useStepNavigation } from "../context/Context";
 import { ValidError } from "../components/form/ValidError";
+import db from "../firebaseConfig";
 
 const CheckVerification = () => {
   const props = useStepNavigation();
@@ -32,6 +34,19 @@ const CheckVerification = () => {
 
     direction === "next" ? newStep++ : newStep--;
     newStep > 0 && newStep <= labels.length && props?.setCurrentStep(newStep);
+
+    const saveDataToFirestore = async () => {
+      await addDoc(collection(db, "myCollection"), {
+        inputVerification1: props?.inputVerification1.fieldValue || "",
+        inputVerification2: props?.inputVerification2.fieldValue || "",
+        inputVerification3: props?.inputVerification3.fieldValue || "",
+        inputVerification4: props?.inputVerification4.fieldValue || "",
+      });
+
+      alert("Document written to Database");
+    };
+
+    saveDataToFirestore();
 
     navigate("/success-phone");
   }

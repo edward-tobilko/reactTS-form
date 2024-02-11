@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { collection, addDoc } from "firebase/firestore/lite";
 
 import { ReviewInfoListStyle, WrapperStyle } from "./pagesStyles";
 
@@ -11,6 +12,7 @@ import { Subtitle } from "../components/text/Subtitle";
 import { Title } from "../components/text/Title";
 import { labels } from "../components/progress-bar/ProgressBar";
 import { useStepNavigation } from "../context/Context";
+import db from "../firebaseConfig";
 
 const ReviewInfo = () => {
   const props = useStepNavigation();
@@ -22,6 +24,25 @@ const ReviewInfo = () => {
 
     direction === "next" ? newStep++ : newStep--;
     newStep > 0 && newStep <= labels.length && props?.setCurrentStep(newStep);
+
+    const saveDataToFirestore = async () => {
+      await addDoc(collection(db, "myCollection"), {
+        bussinesPhoneNumber: props?.bussinesPhoneNumber?.fieldValue || "",
+        bussinesName: props?.bussinesName?.disabledBtn || "",
+        firstName: props?.firstName?.fieldValue || "",
+        lastName: props?.lastName?.fieldValue || "",
+        email: props?.email?.fieldValue || "",
+        phoneNumber: props?.phoneNumber.fieldValue || "",
+        streetName: props?.streetName?.fieldValue || "",
+        streetNumber: props?.streetNumber?.fieldValue || "",
+        cityName: props?.cityName?.fieldValue || "",
+        zipCode: props?.zipCode?.fieldValue || "",
+      });
+
+      alert("Document written to Database");
+    };
+
+    saveDataToFirestore();
 
     navigate("/success-created-account");
   }
@@ -40,7 +61,7 @@ const ReviewInfo = () => {
       <WrapperStyle padding={"30px"}>
         <Title>Review Your Information & Create Account</Title>
         <Subtitle pl={"0"} fs={"14px"}>
-          Please review your information before creating your Alive5  account.
+          Please review your information before creating your Alive account.
         </Subtitle>
 
         <ul>
